@@ -38,7 +38,7 @@ public class ProfileController {
 
     }
 
-    //post
+    //post to database
     @PostMapping("/create")
     public ResponseEntity<Void> createProfile(@RequestBody User user){
         boolean succeeded = profileService.addProfile(user);
