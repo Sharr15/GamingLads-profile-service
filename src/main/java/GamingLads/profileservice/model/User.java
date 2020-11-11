@@ -1,4 +1,4 @@
-package GamingLads.profileservice.Model;
+package GamingLads.profileservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

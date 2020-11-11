@@ -1,6 +1,6 @@
-package GamingLads.profileservice.Repository;
+package GamingLads.profileservice.repository;
 
-import GamingLads.profileservice.Model.Profile;
+import GamingLads.profileservice.model.Profile;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

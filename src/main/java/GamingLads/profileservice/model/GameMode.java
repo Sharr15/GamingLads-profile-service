@@ -1,4 +1,4 @@
-package GamingLads.profileservice.Model;
+package GamingLads.profileservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,18 +10,19 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name= "Game")
-@Table(name = "game")
-public class Game {
+@Entity(name= "GameMode")
+@Table(name = "gameMode")
+public class GameMode {
+
 
     @Getter @Setter @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int gameId;
+    private int gameModeId;
 
     @ManyToMany
     @JoinTable(
-            name = "profile_game",
+            name = "profile_gameMode",
             joinColumns = @JoinColumn(name = "profileId"),
-            inverseJoinColumns = @JoinColumn(name = "gameId"))
+            inverseJoinColumns = @JoinColumn(name = "gameModeId"))
     @Getter @Setter @Column
     private List<Profile> profiles;
 

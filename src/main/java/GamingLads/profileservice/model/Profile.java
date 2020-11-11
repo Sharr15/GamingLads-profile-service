@@ -1,4 +1,4 @@
-package GamingLads.profileservice.Model;
+package GamingLads.profileservice.model;
 
 import com.sun.istack.Nullable;
 import lombok.AllArgsConstructor;

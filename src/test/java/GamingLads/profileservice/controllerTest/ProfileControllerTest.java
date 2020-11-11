@@ -1,36 +1,26 @@
-package GamingLads.profileservice.ControllerTest;
+package GamingLads.profileservice.controllerTest;
 
-import GamingLads.profileservice.Controller.ProfileController;
-import GamingLads.profileservice.Model.Profile;
-import GamingLads.profileservice.Model.User;
-import GamingLads.profileservice.Repository.ProfileRepository;
-import GamingLads.profileservice.Service.ProfileService;
+import GamingLads.profileservice.controller.ProfileController;
+import GamingLads.profileservice.model.Profile;
+import GamingLads.profileservice.model.User;
+import GamingLads.profileservice.repository.ProfileRepository;
+import GamingLads.profileservice.service.ProfileService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.netflix.ribbon.proxy.annotation.Http;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import java.util.function.BooleanSupplier;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
