@@ -2,7 +2,7 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
   ENV: test
 jobs:
-  - job: Maven
+  - job: "BuildTest"
     steps:
       - task: Maven@3
         inputs:
@@ -11,4 +11,4 @@ jobs:
           codeCoverageToolOption: JaCoCo
           publishJUnitResults: false
           testResultsFiles: '**/TEST-*.xml'
-          goals: 'clean install'
+          goals: 'build'
