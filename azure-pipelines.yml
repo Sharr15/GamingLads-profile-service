@@ -1,7 +1,6 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
   ENV: test
-  JAVA_HOME: $(JAVA_HOME_11_X64)
 jobs:
   - job: One
     steps:
@@ -16,10 +15,7 @@ jobs:
         inputs:
           mavenPomFile: 'pom.xml'
           mavenOptions: '-Xmx3072m'
-          javaHomeOption: 'JDKVersion'
           codeCoverageToolOption: JaCoCo
-          jdkVersionOption: '1.11'
-          jdkArchitectureOption: 'x64'
           publishJUnitResults: false
           testResultsFiles: '**/TEST-*.xml'
           goals: 'clean install'
