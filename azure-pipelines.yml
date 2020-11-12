@@ -2,7 +2,6 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
   ENV: test
   JAVA_HOME: $(JAVA_HOME_11_X64)
-  PATH: $(JAVA_HOME_11_X64)/bin;$(PATH)
 jobs:
   - job: One
     steps:
