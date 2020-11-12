@@ -2,13 +2,6 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
   ENV: test
 jobs:
-  - job: One
-    steps:
-      - task: JavaToolInstaller@0
-        inputs:
-          versionSpec: '11'
-          jdkArchitectureOption: 'x64'
-          jdkSourceOption: 'PreInstalled'
   - job: Maven
     steps:
       - task: Maven@3
