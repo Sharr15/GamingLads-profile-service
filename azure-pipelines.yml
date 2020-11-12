@@ -5,7 +5,11 @@ variables:
 jobs:
   - job: One
     steps:
-      - script: echo First step!
+      - task: JavaToolInstaller@0
+        inputs:
+          versionSpec: '11'
+          jdkArchitectureOption: 'x64'
+          jdkSourceOption: 'PreInstalled'
   - job: Maven
     steps:
       - task: Maven@3
