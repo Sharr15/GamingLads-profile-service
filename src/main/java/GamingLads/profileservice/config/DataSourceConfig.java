@@ -20,6 +20,7 @@ public class DataSourceConfig {
         dataSourceBuilder.url(env.getProperty("spring.datasource.url"));
         dataSourceBuilder.username(env.getProperty("spring.datasource.username"));
         dataSourceBuilder.password(env.getProperty("spring.datasource.password"));
+        dataSourceBuilder.driverClassName(env.getProperty("spring.datasource.driverClassName"));
         return dataSourceBuilder.build();
     }
 }
