@@ -28,7 +28,7 @@ class ProfileServiceTest {
     @BeforeEach
     public void setup() {
         profileService = new ProfileService(profileRepository);
-        user = new User("1", "Sharony");
+        user = new User(1, "Sharony");
         profile = new Profile();
         profile.setUserId(user.getUserId());
         profile.setUsername(user.getUsername());

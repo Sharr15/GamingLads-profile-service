@@ -50,7 +50,7 @@ public class ProfileControllerTest {
     public void setup() {
         profileService = new ProfileService(profileRepository);
         profileController = new ProfileController(profileService);
-        user = new User("1", "Sharony");
+        user = new User(1, "Sharony");
         profile = new Profile();
         profile.setUserId(user.getUserId());
         profile.setUsername(user.getUsername());

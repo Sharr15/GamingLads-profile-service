@@ -18,7 +18,7 @@ public class Profile {
     private int profileId;
 
     @Getter @Setter @Column
-    private String userId;
+    private int userId;
 
     @Getter @Setter @Column
     private String username;
