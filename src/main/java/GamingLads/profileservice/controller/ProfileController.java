@@ -43,10 +43,10 @@ public class ProfileController {
     public ResponseEntity<Void> createProfile(@RequestBody User user){
         boolean succeeded = profileService.addProfile(user);
         if(succeeded){
-            return new ResponseEntity<>(null, HttpStatus.CREATED);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
         else{
-            return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
     }
