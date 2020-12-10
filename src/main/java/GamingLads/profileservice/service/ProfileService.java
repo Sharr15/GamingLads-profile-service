@@ -3,19 +3,14 @@ package GamingLads.profileservice.service;
 import GamingLads.profileservice.model.Profile;
 import GamingLads.profileservice.model.User;
 import GamingLads.profileservice.repository.ProfileRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-@Service
+@Service @RequiredArgsConstructor
 public class ProfileService {
 
     private final ProfileRepository profileRepository;
-
-    @Autowired
-    public ProfileService(final ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
-    }
 
     public boolean addProfile(User user){
         Profile profile = createProfile(user);
