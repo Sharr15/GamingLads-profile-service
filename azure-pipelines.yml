@@ -28,6 +28,7 @@ jobs:
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
         javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.11'
         mavenVersionOption: 'Default'
         mavenOptions: '-Xmx3072m'
         mavenAuthenticateFeed: false
@@ -43,8 +44,6 @@ jobs:
         publishJUnitResults: false
         testResultsFiles: '**/TEST-*.xml'
         goals: 'test'
-    - task: SonarCloudAnalyze@1
-      displayName: Run SonarCloud Analysis 
     - task: SonarCloudPublish@1
       displayName: Publish SonarCloud
       inputs:
