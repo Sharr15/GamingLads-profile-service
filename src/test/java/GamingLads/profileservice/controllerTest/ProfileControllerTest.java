@@ -67,14 +67,4 @@ public class ProfileControllerTest {
         // ResponseEntity<Void> response = profileController.createProfile(user);
         Assertions.assertEquals(HttpStatus.CREATED.value(), response.getResponse().getStatus());
     }
-
-    @Test
-    void testGetAllProfiles(){
-        //TODO:
-    }
-
-    @Test
-    void testUpdateProfile(){
-        //TODO:
-    }
 }

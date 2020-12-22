@@ -42,26 +42,6 @@ class ProfileServiceTest {
 
     @Test
     void testSaveProfile() throws Exception{
-        //boolean mockSaved = true;
-        //when(profileRepository.save(Mockito.any(Profile.class))).thenReturn(profile);
-        //when(profileRepository.save(Mockito.any(Profile.class))).thenAnswer(i -> i.getArguments()[0]);
-        //when(profileService.saveProfile(profile)).thenReturn(true);
-        //boolean saved = profileService.saveProfile(profile);
-        //assertThat(saved).isTrue();
-
         assertTrue(profileService.saveProfile(profile));
     }
-
-
-    @Test
-    void testUpdateProfile() throws Exception{
-    //TODO
-    }
-
-
-    @Test
-    void testGetAllProfiles() throws Exception{
-    //TODO
-    }
-
 }
