@@ -1,8 +1,11 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)
+
 variables:
   ENV: test
 jobs:
   - job: "Compile"
+    pool:
+      vmImage: 'windows-latest'
     steps:
       - task: Maven@3
         displayName: Compiling Image
@@ -22,7 +25,13 @@ jobs:
       - task: Docker@2
         displayName: Building Docker Image
         inputs:
-          repository: $(imageName)
-          command: build
+          command: buildAndPush
           Dockerfile: Dockerfile
-      
+          tags: |
+            $(Build.BuildId)
+            latest
+      - task: PushToHeroku@0
+        inputs:
+          ApiKey: 'd0e26bf9-46d6-49bb-a3a0-aaab5063d904'
+          AppName: 'gaminglads-userservice'
+          PushRoot: '/'
