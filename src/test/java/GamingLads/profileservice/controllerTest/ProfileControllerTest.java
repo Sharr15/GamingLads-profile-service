@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +22,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
@@ -62,6 +65,8 @@ public class ProfileControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user));
         MvcResult response = mockMvc.perform(request).andReturn();
+        when(profileRepository.save(Mockito.any(Profile.class)))
+                .thenAnswer(i -> i.getArguments()[0]);
 
 
         // ResponseEntity<Void> response = profileController.createProfile(user);
