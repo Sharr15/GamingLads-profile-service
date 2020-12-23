@@ -1,10 +1,10 @@
-package gamingLads.profileservice.controllerTest;
+package gaminglads.profileservice.controllerTest;
 
-import gamingLads.profileservice.controller.ProfileController;
-import gamingLads.profileservice.model.Profile;
-import gamingLads.profileservice.model.User;
-import gamingLads.profileservice.repository.ProfileRepository;
-import gamingLads.profileservice.service.ProfileService;
+import gaminglads.profileservice.controller.ProfileController;
+import gaminglads.profileservice.model.Profile;
+import gaminglads.profileservice.model.User;
+import gaminglads.profileservice.repository.ProfileRepository;
+import gaminglads.profileservice.service.ProfileService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

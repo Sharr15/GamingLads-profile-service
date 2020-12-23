@@ -1,8 +1,8 @@
-package gamingLads.profileservice.controller;
+package gaminglads.profileservice.controller;
 
-import gamingLads.profileservice.model.Profile;
-import gamingLads.profileservice.model.User;
-import gamingLads.profileservice.service.ProfileService;
+import gaminglads.profileservice.model.Profile;
+import gaminglads.profileservice.model.User;
+import gaminglads.profileservice.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

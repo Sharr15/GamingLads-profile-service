@@ -1,8 +1,8 @@
-package gamingLads.profileservice.service;
+package gaminglads.profileservice.service;
 
-import gamingLads.profileservice.model.Profile;
-import gamingLads.profileservice.model.User;
-import gamingLads.profileservice.repository.ProfileRepository;
+import gaminglads.profileservice.model.Profile;
+import gaminglads.profileservice.model.User;
+import gaminglads.profileservice.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;

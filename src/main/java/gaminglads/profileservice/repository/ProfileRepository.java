@@ -1,6 +1,6 @@
-package gamingLads.profileservice.repository;
+package gaminglads.profileservice.repository;
 
-import gamingLads.profileservice.model.Profile;
+import gaminglads.profileservice.model.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

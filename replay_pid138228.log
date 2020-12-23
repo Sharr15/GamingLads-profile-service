@@ -853,7 +853,7 @@ instanceKlass com/netflix/appinfo/ApplicationInfoManager$InstanceStatusMapper
 instanceKlass javax/persistence/EntityListeners
 instanceKlass org/hibernate/cfg/annotations/reflection/XMLContext$Default
 instanceKlass org/hibernate/boot/model/source/internal/annotations/AnnotationMetadataSourceProcessorImpl$1
-instanceKlass gamingLads/profileservice/model/GameMode
+instanceKlass gaminglads/profileservice/model/GameMode
 instanceKlass org/hibernate/annotations/common/reflection/java/JavaAnnotationReader
 instanceKlass org/hibernate/annotations/common/reflection/Filter
 instanceKlass org/hibernate/annotations/common/reflection/java/JavaXAnnotatedElement
@@ -866,7 +866,7 @@ instanceKlass org/hibernate/annotations/common/reflection/XClass
 instanceKlass org/springframework/objenesis/strategy/PlatformDescription
 instanceKlass org/hibernate/annotations/common/reflection/java/generics/TypeSwitch
 instanceKlass org/hibernate/annotations/common/reflection/java/generics/IdentityTypeEnvironment
-instanceKlass gamingLads/profileservice/model/Game
+instanceKlass gaminglads/profileservice/model/Game
 instanceKlass org/hibernate/boot/model/source/internal/annotations/AnnotationMetadataSourceProcessorImpl$AttributeConverterManager
 instanceKlass org/hibernate/boot/spi/JpaOrmXmlPersistenceUnitDefaultAware$JpaOrmXmlPersistenceUnitDefaults
 instanceKlass org/hibernate/cfg/annotations/reflection/AttributeConverterDefinitionCollector
@@ -2207,7 +2207,7 @@ instanceKlass javax/persistence/spi/ClassTransformer
 instanceKlass org/hibernate/jpa/boot/internal/PersistenceUnitInfoDescriptor
 instanceKlass org/hibernate/internal/EntityManagerMessageLogger
 instanceKlass org/hibernate/internal/CoreMessageLogger
-instanceKlass gamingLads/profileservice/model/User
+instanceKlass gaminglads/profileservice/model/User
 instanceKlass org/hibernate/internal/HEMLogging
 instanceKlass org/hibernate/boot/archive/scan/spi/ScanOptions
 instanceKlass org/hibernate/boot/archive/scan/spi/ScanEnvironment
@@ -3447,7 +3447,7 @@ instanceKlass org/springframework/data/util/Pair
 instanceKlass java/util/stream/Streams$RangeIntSpliterator
 instanceKlass org/springframework/core/GenericTypeResolver$TypeVariableMapVariableResolver
 instanceKlass org/springframework/data/repository/core/support/AbstractRepositoryMetadata$$Lambda$391+0x0000000800e40298
-instanceKlass gamingLads/profileservice/model/Profile
+instanceKlass gaminglads/profileservice/model/Profile
 instanceKlass org/springframework/data/util/ClassTypeInformation$$Lambda$390+0x0000000800e3fdc8
 instanceKlass org/springframework/data/util/ClassTypeInformation$$Lambda$389+0x0000000800e3f940
 instanceKlass org/springframework/data/util/TypeDiscoverer$$Lambda$388+0x0000000800e3f150
@@ -3466,7 +3466,7 @@ instanceKlass org/springframework/data/repository/core/CrudMethods
 instanceKlass org/springframework/data/util/TypeInformation
 instanceKlass org/springframework/data/repository/core/support/AbstractRepositoryMetadata
 instanceKlass org/springframework/data/repository/core/RepositoryMetadata
-instanceKlass gamingLads/profileservice/repository/ProfileRepository
+instanceKlass gaminglads/profileservice/repository/ProfileRepository
 instanceKlass org/springframework/data/jpa/repository/config/JpaRepositoryConfigExtension$LazyJvmAgent$$Lambda$381+0x0000000800e3c598
 instanceKlass org/springframework/data/jpa/repository/config/JpaRepositoryConfigExtension$LazyJvmAgent
 instanceKlass org/springframework/data/repository/config/DefaultRepositoryConfiguration
@@ -3765,9 +3765,9 @@ instanceKlass org/apache/commons/configuration/event/EventSource
 instanceKlass org/apache/commons/configuration/event/ConfigurationListener
 instanceKlass com/netflix/config/AggregatedConfiguration
 instanceKlass org/apache/commons/configuration/Configuration
-instanceKlass gamingLads/profileservice/service/ProfileService
-instanceKlass gamingLads/profileservice/controller/ProfileController
-instanceKlass gamingLads/profileservice/config/DataSourceConfig
+instanceKlass gaminglads/profileservice/service/ProfileService
+instanceKlass gaminglads/profileservice/controller/ProfileController
+instanceKlass gaminglads/profileservice/config/DataSourceConfig
 instanceKlass org/apache/coyote/UpgradeProtocol
 instanceKlass org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryAutoConfiguration$BeanPostProcessorsRegistrar
 instanceKlass org/springframework/boot/web/servlet/RegistrationBean
@@ -6383,7 +6383,7 @@ instanceKlass org/springframework/beans/factory/BeanFactory
 instanceKlass org/springframework/core/env/EnvironmentCapable
 instanceKlass org/springframework/boot/ApplicationArguments
 instanceKlass org/springframework/boot/SpringApplication
-instanceKlass gamingLads/profileservice/ProfileServiceApplication
+instanceKlass gaminglads/profileservice/ProfileServiceApplication
 instanceKlass java/nio/DirectByteBuffer$Deallocator
 instanceKlass sun/nio/ch/Util$BufferCache
 instanceKlass sun/nio/ch/Util

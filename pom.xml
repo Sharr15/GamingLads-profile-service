@@ -12,7 +12,7 @@
 	<artifactId>profile-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>profile-service</name>
-	<description>Profile service for gamingLads</description>
+	<description>Profile service for gaminglads</description>
 
 	<properties>
 		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
