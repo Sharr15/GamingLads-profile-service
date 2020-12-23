@@ -1,8 +1,8 @@
-package GamingLads.profileservice.controller;
+package gamingLads.profileservice.controller;
 
-import GamingLads.profileservice.model.Profile;
-import GamingLads.profileservice.model.User;
-import GamingLads.profileservice.service.ProfileService;
+import gamingLads.profileservice.model.Profile;
+import gamingLads.profileservice.model.User;
+import gamingLads.profileservice.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,13 +27,13 @@ public class ProfileController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Void> updateProfile(Profile profile){
+    public ResponseEntity<Void> updateProfile(@RequestBody Profile profile){
         boolean succeeded = profileService.updateProfile(profile);
         if(succeeded){
-            return new ResponseEntity<>(null, HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         }
         else{
-            return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
     }

@@ -1,8 +1,8 @@
-package GamingLads.profileservice.service;
+package gamingLads.profileservice.service;
 
-import GamingLads.profileservice.model.Profile;
-import GamingLads.profileservice.model.User;
-import GamingLads.profileservice.repository.ProfileRepository;
+import gamingLads.profileservice.model.Profile;
+import gamingLads.profileservice.model.User;
+import gamingLads.profileservice.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -50,12 +50,7 @@ public class ProfileService {
 
     public List<Profile> getAllProfiles(){
         List<Profile> profiles;
-        try{
-            profiles = (List<Profile>) profileRepository.findAll();
-        }
-        catch(Exception e){
-            return null;
-        }
+        profiles = profileRepository.findAll();
         return profiles;
     }
 }

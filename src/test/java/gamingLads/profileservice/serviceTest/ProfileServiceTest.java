@@ -1,9 +1,9 @@
-package GamingLads.profileservice.serviceTest;
+package gamingLads.profileservice.serviceTest;
 
-import GamingLads.profileservice.model.Profile;
-import GamingLads.profileservice.model.User;
-import GamingLads.profileservice.repository.ProfileRepository;
-import GamingLads.profileservice.service.ProfileService;
+import gamingLads.profileservice.model.Profile;
+import gamingLads.profileservice.model.User;
+import gamingLads.profileservice.repository.ProfileRepository;
+import gamingLads.profileservice.service.ProfileService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

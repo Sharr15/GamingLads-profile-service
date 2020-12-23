@@ -1,10 +1,10 @@
-package GamingLads.profileservice.controllerTest;
+package gamingLads.profileservice.controllerTest;
 
-import GamingLads.profileservice.controller.ProfileController;
-import GamingLads.profileservice.model.Profile;
-import GamingLads.profileservice.model.User;
-import GamingLads.profileservice.repository.ProfileRepository;
-import GamingLads.profileservice.service.ProfileService;
+import gamingLads.profileservice.controller.ProfileController;
+import gamingLads.profileservice.model.Profile;
+import gamingLads.profileservice.model.User;
+import gamingLads.profileservice.repository.ProfileRepository;
+import gamingLads.profileservice.service.ProfileService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,7 +28,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
 @SpringBootTest
-public class ProfileControllerTest {
+class ProfileControllerTest {
 
     @MockBean
     private ProfileRepository profileRepository;
