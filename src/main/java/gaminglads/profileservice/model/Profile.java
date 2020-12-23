@@ -29,5 +29,5 @@ public class Profile {
 
     @ManyToMany(mappedBy = "profiles")
     @Getter @Setter @Column @Nullable
-    private List<GameMode> GameModes;
+    private List<GameMode> gameModes;
 }
