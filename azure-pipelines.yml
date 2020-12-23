@@ -39,11 +39,17 @@ jobs:
       displayName: Testing Image
       inputs:
         mavenPomFile: 'pom.xml'
-        mavenOptions: '-Xmx3072m'
-        codeCoverageToolOption: JaCoCo
-        publishJUnitResults: false
-        testResultsFiles: '**/TEST-*.xml'
         goals: 'test'
+        publishJUnitResults: true
+        testResultsFiles: '**/TEST-*.xml'
+        codeCoverageToolOption: 'JaCoCo'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenOptions: '-Xmx3072m'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: true
+        sqMavenPluginVersionChoice: 'latest'
     - task: SonarCloudPublish@1
       displayName: Publish SonarCloud
       inputs:
