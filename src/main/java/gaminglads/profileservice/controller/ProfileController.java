@@ -22,32 +22,32 @@ public class ProfileController {
     }
 
     @GetMapping("/all")
-    public List<Profile> getAllProfiles(){
-        return profileService.getAllProfiles();
+    public ResponseEntity<List> getAllProfiles() {
+        List<Profile> profiles = profileService.getAllProfiles();
+        if (profiles != null) {
+            return new ResponseEntity<List>(profiles, HttpStatus.OK);
+        }
+        return new ResponseEntity<List>(profiles, HttpStatus.CONFLICT);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Void> updateProfile(@RequestBody Profile profile){
+    public ResponseEntity<Void> updateProfile(@RequestBody Profile profile) {
         boolean succeeded = profileService.updateProfile(profile);
-        if(succeeded){
+        if (succeeded) {
             return new ResponseEntity<>(HttpStatus.OK);
-        }
-        else{
+        } else {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-
     }
 
     //post to database
     @PostMapping("/create")
-    public ResponseEntity<Void> createProfile(@RequestBody User user){
+    public ResponseEntity<Void> createProfile(@RequestBody User user) {
         boolean succeeded = profileService.addProfile(user);
-        if(succeeded){
+        if (succeeded) {
             return new ResponseEntity<>(HttpStatus.CREATED);
-        }
-        else{
+        } else {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-
     }
 }
