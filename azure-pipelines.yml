@@ -20,30 +20,15 @@ jobs:
           sonar.projectKey=S3-Individual_GamingLads
           sonar.projectName=GamingLads
     - task: Maven@3
-      displayName: Compiling Image
+      displayName: Testing image
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'compile'
+        goals: 'clean verify sonar:sonar'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
-        mavenVersionOption: 'Default'
-        mavenOptions: '-Xmx3072m'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
-    - task: Maven@3
-      displayName: Testing Image
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean verify sonar:sonar'
-        publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
         mavenOptions: '-Xmx3072m'
         mavenAuthenticateFeed: false
