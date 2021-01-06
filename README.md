@@ -19,5 +19,5 @@ Returns a responseEntity with status OK if succeeded or CONFLICT if failed
 ````http request
 GET/profile/all
 ````
-Returns a responseEntity with a list of profiles and status OK if succeeded or an empty list and CONFLICT if failed
+Returns a responseEntity with a list of profiles and status OK if succeeded or null and CONFLICT if failed
 
