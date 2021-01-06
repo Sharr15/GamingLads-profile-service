@@ -39,7 +39,7 @@ jobs:
       displayName: Testing Image
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'test'
+        goals: 'clean verify sonar:sonar'
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
