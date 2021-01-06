@@ -22,12 +22,12 @@ public class ProfileController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List> getAllProfiles() {
+    public ResponseEntity<List<Profile>> getAllProfiles() {
         List<Profile> profiles = profileService.getAllProfiles();
         if (profiles != null) {
-            return new ResponseEntity<List>(profiles, HttpStatus.OK);
+            return new ResponseEntity<>(profiles, HttpStatus.OK);
         }
-        return new ResponseEntity<List>(profiles, HttpStatus.CONFLICT);
+        return new ResponseEntity<>(null, HttpStatus.CONFLICT);
     }
 
     @PutMapping("/update")
