@@ -23,7 +23,7 @@ jobs:
       displayName: Compiling Image
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'compile'
+        goals: 'package'
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
