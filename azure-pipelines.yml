@@ -25,7 +25,7 @@ jobs:
         mavenPomFile: 'pom.xml'
         goals: 'package'
         publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
@@ -33,7 +33,7 @@ jobs:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
+        sqMavenPluginVersionChoice: 'pom'
     - task: CmdLine@2
       inputs:
         script: 'mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
