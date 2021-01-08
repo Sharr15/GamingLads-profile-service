@@ -34,23 +34,9 @@ jobs:
         effectivePomSkip: false
         sonarQubeRunAnalysis: true
         sqMavenPluginVersionChoice: 'latest'
-    - task: Maven@3
-      displayName: Testing image
+    - task: CmdLine@2
       inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean verify sonar:sonar -Pcoverage -Dsonar.jacoco.reportPaths=**/jacoco.exec'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '1.11'
-        mavenVersionOption: 'Default'
-        mavenOptions: '-Xmx3072m'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
-
+        script: 'mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
 
     - task: SonarCloudPublish@1
       displayName: Publish SonarCloud
