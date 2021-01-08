@@ -7,6 +7,9 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     steps:
+    - checkout: self
+      fetchDepth: 0
+
     - task: SonarCloudPrepare@1
       displayName: 
       inputs:
@@ -33,7 +36,7 @@ jobs:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'pom'
+        sqMavenPluginVersionChoice: 'latest'
     - task: CmdLine@2
       inputs:
         script: 'mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
