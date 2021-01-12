@@ -1,5 +1,6 @@
 # GamingLads-profile-service
 This service takes care of all the profiles from the users.
+All documentation can be found in gaminglads-gateway -> documentation
 
 ## api endpoints
 ##### create profile
