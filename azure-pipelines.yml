@@ -26,11 +26,11 @@ jobs:
       displayName: Compiling Image
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'package'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
         javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.11'
         mavenVersionOption: 'Default'
         mavenOptions: '-Xmx3072m'
         mavenAuthenticateFeed: false
