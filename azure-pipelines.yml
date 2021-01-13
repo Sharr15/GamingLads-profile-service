@@ -7,6 +7,9 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     steps:
+    - checkout: self
+      fetchDepth: 0
+
     - task: SonarCloudPrepare@1
       displayName: 
       inputs:
@@ -23,22 +26,6 @@ jobs:
       displayName: Compiling Image
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'package'
-        publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenOptions: '-Xmx3072m'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
-    - task: Maven@3
-      displayName: Testing image
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean verify sonar:sonar -Pcoverage'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
@@ -50,7 +37,9 @@ jobs:
         effectivePomSkip: false
         sonarQubeRunAnalysis: true
         sqMavenPluginVersionChoice: 'latest'
-
+    - task: CmdLine@2
+      inputs:
+        script: 'mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
 
     - task: SonarCloudPublish@1
       displayName: Publish SonarCloud
