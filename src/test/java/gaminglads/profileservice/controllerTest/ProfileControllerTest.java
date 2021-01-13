@@ -61,15 +61,14 @@ class ProfileControllerTest {
 
     @Test
     void testCreateProfile() throws Exception {
+        when(profileRepository.save(Mockito.any(Profile.class)))
+                .thenAnswer(i -> i.getArguments()[0]);
+
         RequestBuilder request = MockMvcRequestBuilders.post("/profile/create")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user));
         MvcResult response = mockMvc.perform(request).andReturn();
-        when(profileRepository.save(Mockito.any(Profile.class)))
-                .thenAnswer(i -> i.getArguments()[0]);
 
-
-        // ResponseEntity<Void> response = profileController.createProfile(user);
         Assertions.assertEquals(HttpStatus.CREATED.value(), response.getResponse().getStatus());
     }
 }

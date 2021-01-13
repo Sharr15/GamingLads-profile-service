@@ -1,5 +1,6 @@
 package gaminglads.profileservice.serviceTest;
 
+import gaminglads.profileservice.exceptions.ProfileNotSavedException;
 import gaminglads.profileservice.model.Profile;
 import gaminglads.profileservice.model.User;
 import gaminglads.profileservice.repository.ProfileRepository;
@@ -13,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -37,15 +39,30 @@ class ProfileServiceTest {
     }
 
     @Test
-    void testCreateProfile() throws Exception{
+    void testCreateProfile() throws Exception {
         Profile mockProfile = profileService.createProfile(user);
         assertThat(profile).isEqualToComparingFieldByField(mockProfile);
     }
 
+    //succeeds if no exception is thrown
     @Test
-    void testSaveProfile() throws Exception{
+    void testSaveProfile() throws Exception {
         when(profileRepository.save(Mockito.any(Profile.class)))
                 .thenAnswer(i -> i.getArguments()[0]);
-        assertTrue(profileService.saveProfile(profile));
+        profileService.saveProfile(profile);
+    }
+
+    @Test
+    void testProfileNotSaved() throws Exception {
+        Profile profile1 = null;
+        assertThrows(ProfileNotSavedException.class, () -> profileService.saveProfile(profile1));
+    }
+
+    //succeeds if no exception is thrown
+    @Test
+    void testAddProfile() throws Exception {
+        when(profileRepository.save(Mockito.any(Profile.class)))
+                .thenAnswer(i -> i.getArguments()[0]);
+        profileService.addProfile(user);
     }
 }

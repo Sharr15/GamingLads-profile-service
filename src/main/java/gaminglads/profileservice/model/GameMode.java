@@ -10,12 +10,13 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name= "GameMode")
+@Entity(name = "GameMode")
 @Table(name = "gameMode")
 public class GameMode {
-
-
-    @Getter @Setter @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Getter
+    @Setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int gameModeId;
 
     @ManyToMany
@@ -23,11 +24,13 @@ public class GameMode {
             name = "profile_gameMode",
             joinColumns = @JoinColumn(name = "profileId"),
             inverseJoinColumns = @JoinColumn(name = "gameModeId"))
-    @Getter @Setter @Column
+    @Getter
+    @Setter
+    @Column
     private List<Profile> profiles;
 
-    @Getter @Setter @Column
+    @Getter
+    @Setter
+    @Column
     private String name;
-
-
 }

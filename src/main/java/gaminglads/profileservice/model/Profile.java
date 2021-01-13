@@ -9,25 +9,39 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
-@NoArgsConstructor @AllArgsConstructor
-@Entity(name= "Profile")
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "Profile")
 @Table(name = "profile")
 public class Profile {
 
-    @Getter @Setter @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Getter
+    @Setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int profileId;
 
-    @Getter @Setter @Column
+    @Getter
+    @Setter
+    @Column
     private int userId;
 
-    @Getter @Setter @Column
+    @Getter
+    @Setter
+    @Column
     private String username;
 
     @ManyToMany(mappedBy = "profiles")
-    @Getter @Setter @Column @Nullable
+    @Getter
+    @Setter
+    @Column
+    @Nullable
     private List<Game> games;
 
     @ManyToMany(mappedBy = "profiles")
-    @Getter @Setter @Column @Nullable
+    @Getter
+    @Setter
+    @Column
+    @Nullable
     private List<GameMode> gameModes;
 }

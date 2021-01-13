@@ -1,5 +1,6 @@
 package gaminglads.profileservice.controller;
 
+import gaminglads.profileservice.exceptions.ProfileNotSavedException;
 import gaminglads.profileservice.model.Profile;
 import gaminglads.profileservice.model.User;
 import gaminglads.profileservice.service.ProfileService;
@@ -17,6 +18,13 @@ public class ProfileController {
     @Autowired
     public ProfileController(ProfileService profileService) {
         this.profileService = profileService;
+    }
+
+    //post to database
+    @PostMapping("/create")
+    public ResponseEntity<Void> createProfile(@RequestBody User user) throws ProfileNotSavedException {
+        profileService.addProfile(user);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     /*@GetMapping("/all")
@@ -37,15 +45,4 @@ public class ProfileController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }*/
-
-    //post to database
-    @PostMapping("/create")
-    public ResponseEntity<Void> createProfile(@RequestBody User user) {
-        boolean succeeded = profileService.addProfile(user);
-        if (succeeded) {
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        } else {
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
-        }
-    }
 }
