@@ -1,7 +1,6 @@
 package gaminglads.profileservice.controller;
 
 import gaminglads.profileservice.exceptions.ProfileNotSavedException;
-import gaminglads.profileservice.model.Profile;
 import gaminglads.profileservice.model.User;
 import gaminglads.profileservice.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,23 +25,4 @@ public class ProfileController {
         profileService.addProfile(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
-    /*@GetMapping("/all")
-    public ResponseEntity<List<Profile>> getAllProfiles() {
-        List<Profile> profiles = profileService.getAllProfiles();
-        if (profiles != null) {
-            return new ResponseEntity<>(profiles, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(null, HttpStatus.CONFLICT);
-    }*/
-
-    /*@PutMapping("/update")
-    public ResponseEntity<Void> updateProfile(@RequestBody Profile profile) {
-        boolean succeeded = profileService.updateProfile(profile);
-        if (succeeded) {
-            return new ResponseEntity<>(HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
-        }
-    }*/
 }
