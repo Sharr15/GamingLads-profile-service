@@ -19,6 +19,11 @@ public class GameMode {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int gameModeId;
 
+    @Getter
+    @Setter
+    @Column
+    private String name;
+
     @ManyToMany
     @JoinTable(
             name = "profile_gameMode",
@@ -28,9 +33,4 @@ public class GameMode {
     @Setter
     @Column
     private List<Profile> profiles;
-
-    @Getter
-    @Setter
-    @Column
-    private String name;
 }
