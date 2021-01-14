@@ -31,22 +31,4 @@ public class ProfileService {
         }
         profileRepository.save(profile);
     }
-
-    /*public boolean updateProfile(Profile profile) {
-        try {
-            Profile newProfile = new Profile();
-            newProfile.setGames(profile.getGames());
-            newProfile.setGameModes(profile.getGameModes());
-            profileRepository.save(newProfile);
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
-    }
-
-    public List<Profile> getAllProfiles() {
-        List<Profile> profiles;
-        profiles = profileRepository.findAll();
-        return profiles;
-    }*/
 }
