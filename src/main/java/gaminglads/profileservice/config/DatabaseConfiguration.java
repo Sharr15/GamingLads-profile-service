@@ -17,6 +17,8 @@ public class DatabaseConfiguration {
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(dbUrl);
+        config.setMaximumPoolSize(10);
+        config.setMinimumIdle(2);
         return new HikariDataSource(config);
     }
 }
